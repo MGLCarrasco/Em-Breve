@@ -237,10 +237,11 @@
 
     <!-- Seção do Vídeo 16:9 -->
     <div class="video-container">
-        <!-- O caminho do vídeo foi atualizado para "videos/2026.mp4" -->
+        <!-- O caminho do vídeo foi atualizado para "vídeos/2026.mp4" (com acento no 'i') -->
         <video controls loop autoplay muted playsinline>
-            <source src="videos/2026.mp4" type="video/mp4">
-            <!-- Removido o source para .webm, pois você indicou apenas .mp4 -->
+            <source src="vídeos/2026.mp4" type="video/mp4">
+            <!-- Se você tiver uma versão .webm (altamente recomendado para compatibilidade), adicione-a aqui: -->
+            <!-- <source src="vídeos/2026.webm" type="video/webm"> -->
             Seu navegador não suporta a tag de vídeo.
         </video>
     </div>
@@ -263,8 +264,7 @@
         <span class="countdown-label text-white mx-1 md:mx-2">:</span>
         <!-- Item: Minutos -->
         <div class="flex flex-col items-center mx-2 md:mx-4 countdown-item">
-            <span id="minutes" class="countdown-number">00</span>
-            <span class="countdown-label">MINUTOS</span>
+            <span id="minutes" class="countdown-label">MINUTOS</span>
         </div>
         <!-- Separador -->
         <span class="countdown-label text-white mx-1 md:mx-2">:</span>
