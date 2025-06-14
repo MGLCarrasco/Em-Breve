@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 EM BREVE - Contagem Regressiva Rock</title>
+    <!-- Inclui a fonte Inter do Google Fonts para uma estética moderna e limpa -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+    <!-- Inclui Tailwind CSS para um estilo responsivo e utilitário -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter como a fonte padrão para todo o corpo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000; /* Fundo preto para o contraste do estilo rock */
+            display: flex; /* Usa flexbox para centralizar o conteúdo */
+            flex-direction: column; /* Organiza os itens verticalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+            min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+            margin: 0;
+            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+            padding: 2vw; /* Adiciona um pouco de padding para espaçamento nas bordas */
+            box-sizing: border-box; /* Inclui padding e borda na largura/altura total */
+        }
+
+        /* --- Estilos do Texto Piscando (2026 EM BREVE) --- */
+        /* Define um tamanho de fonte fixo para o texto "2026" */
+        .text-2026 {
+            font-size: 15vw; /* Tamanho de fonte fixo, responsivo mas sem variação na animação */
+            color: #000;
+            -webkit-text-stroke: 2px #ff0000;
+            font-weight: 900;
+            animation: pulse-glow 4s ease-in-out infinite; /* Animação de brilho e opacidade */
+            line-height: 1;
+            position: relative;
+            z-index: 10;
+            user-select: none; /* Impede a seleção do texto */
+        }
+
+        /* Animação apenas de brilho e opacidade para "2026" */
+        @keyframes pulse-glow {
+            0% {
+                opacity: 0.7;
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.4);
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.4);
+            }
+            100% {
+                opacity: 0.7;
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.4);
+            }
+        }
+
+        /* Pseudo-elemento para o contorno branco de "2026" */
+        .text-2026::before {
+            content: "2026";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: transparent;
+            -webkit-text-stroke: 2px #fff;
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.5), 0 0 12px rgba(255, 255, 255, 0.3);
+            animation: pulse-overlay-glow 4s ease-in-out infinite; /* Animação de brilho e opacidade para o overlay */
+            z-index: 5;
+            font-size: inherit; /* Herda o tamanho de fonte fixo do pai */
+        }
+
+        /* Animação para o pseudo-elemento de "2026", mantendo-o estático */
+        @keyframes pulse-overlay-glow {
+            0% {
+                transform: translate(0.5px, 0.5px); /* Deslocamento sutil para o efeito de destaque */
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(0.5px, 0.5px);
+                opacity: 0.5;
+            }
+        }
+
+        /* Define um tamanho de fonte fixo para o texto "EM BREVE" */
+        .text-em-breve {
+            font-size: 5vw; /* Tamanho de fonte fixo, responsivo mas sem variação na animação */
+            color: #000;
+            -webkit-text-stroke: 1px #fff;
+            font-weight: 900;
+            animation: pulse-small-glow 4s ease-in-out infinite; /* Animação de brilho e opacidade */
+            margin-top: -3vw;
+            position: relative;
+            z-index: 10;
+            user-select: none; /* Impede a seleção do texto */
+        }
+
+        /* Animação apenas de brilho e opacidade para "EM BREVE" */
+        @keyframes pulse-small-glow {
+            0% {
+                opacity: 0.6;
+                text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                opacity: 1;
+                text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                opacity: 0.6;
+                text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* Pseudo-elemento para o contorno vermelho de "EM BREVE" */
+        .text-em-breve::before {
+            content: "EM BREVE";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: transparent;
+            -webkit-text-stroke: 1px #ff0000;
+            text-shadow: 0 0 4px rgba(255, 0, 0, 0.5), 0 0 8px rgba(255, 0, 0, 0.3);
+            animation: pulse-overlay-small-glow 4s ease-in-out infinite; /* Animação de brilho e opacidade para o overlay */
+            z-index: 5;
+            font-size: inherit; /* Herda o tamanho de fonte fixo do pai */
+        }
+
+        /* Animação para o pseudo-elemento de "EM BREVE", mantendo-o estático */
+        @keyframes pulse-overlay-small-glow {
+            0% {
+                transform: translate(0.25px, 0.25px);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(0.25px, 0.25px);
+                opacity: 0.4;
+            }
+        }
+
+        /* --- Estilos da Seção de Vídeo --- */
+        .video-container {
+            position: relative;
+            width: 80%; /* Largura do contêiner do vídeo */
+            max-width: 960px; /* Largura máxima para o vídeo */
+            padding-bottom: 45%; /* Para manter a proporção 16:9 (9/16 = 0.5625, 56.25% de padding-bottom) */
+            height: 0;
+            overflow: hidden;
+            margin: 4vw 0; /* Margem superior e inferior para separar dos textos */
+            border-radius: 1rem; /* Cantos arredondados */
+        }
+
+        .video-container video { /* Alterado de iframe para video */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 1rem; /* Cantos arredondados no vídeo também */
+            object-fit: cover; /* Garante que o vídeo preencha o contêiner sem distorção */
+        }
+
+        /* --- Estilos do Temporizador (Contagem Regressiva) --- */
+        @keyframes glow-pulse {
+            0% {
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.6);
+            }
+            100% {
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.4);
+            }
+        }
+
+        .countdown-number {
+            font-size: 12vw;
+            color: #000;
+            -webkit-text-stroke: 2px #fff;
+            font-weight: 900;
+            animation: glow-pulse 3s ease-in-out infinite;
+            line-height: 1;
+            margin: 0 1vw;
+            user-select: none;
+        }
+
+        .countdown-label {
+            font-size: 3vw;
+            color: #eee;
+            font-weight: 700;
+            margin-top: 1vw;
+            -webkit-text-stroke: 0.5px #ff0000;
+            user-select: none;
+        }
+
+        /* Responsividade para telas menores (contagem regressiva) */
+        @media (max-width: 768px) {
+            .countdown-number {
+                font-size: 18vw;
+            }
+            .countdown-label {
+                font-size: 5vw;
+            }
+            .video-container {
+                width: 95%; /* Vídeo ocupa mais espaço em telas pequenas */
+            }
+        }
+        @media (max-width: 480px) {
+            .countdown-number {
+                font-size: 22vw;
+            }
+            .countdown-label {
+                font-size: 6vw;
+            }
+            .countdown-item {
+                margin: 0 0.5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Seção do Texto Piscando "2026 EM BREVE" -->
+    <div class="flex flex-col items-center justify-center mb-8">
+        <h1 class="text-2026 select-none">2026</h1>
+        <p class="text-em-breve select-none">EM BREVE</p>
+    </div>
+
+    <!-- Seção do Vídeo 16:9 -->
+    <div class="video-container">
+        <!-- ATENÇÃO: Substitua os caminhos 'videos/seu-video.mp4' e 'videos/seu-video.webm' pelos caminhos reais dos seus arquivos de vídeo no GitHub. -->
+        <!-- É recomendável ter ambos os formatos (mp4 e webm) para maior compatibilidade com navegadores. -->
+        <video controls loop autoplay muted playsinline>
+            <source src="videos/seu-video.mp4" type="video/mp4">
+            <source src="videos/seu-video.webm" type="video/webm">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+
+    <!-- Seção do Temporizador de Contagem Regressiva -->
+    <div class="flex items-end justify-center w-full px-4 mt-8">
+        <!-- Item: Dias -->
+        <div class="flex flex-col items-center mx-2 md:mx-4 countdown-item">
+            <span id="days" class="countdown-number">00</span>
+            <span class="countdown-label">DIAS</span>
+        </div>
+        <!-- Separador -->
+        <span class="countdown-label text-white mx-1 md:mx-2">:</span>
+        <!-- Item: Horas -->
+        <div class="flex flex-col items-center mx-2 md:mx-4 countdown-item">
+            <span id="hours" class="countdown-number">00</span>
+            <span class="countdown-label">HORAS</span>
+        </div>
+        <!-- Separador -->
+        <span class="countdown-label text-white mx-1 md:mx-2">:</span>
+        <!-- Item: Minutos -->
+        <div class="flex flex-col items-center mx-2 md:mx-4 countdown-item">
+            <span id="minutes" class="countdown-number">00</span>
+            <span class="countdown-label">MINUTOS</span>
+        </div>
+        <!-- Separador -->
+        <span class="countdown-label text-white mx-1 md:mx-2">:</span>
+        <!-- Item: Segundos -->
+        <div class="flex flex-col items-center mx-2 md:mx-4 countdown-item">
+            <span id="seconds" class="countdown-number">00</span>
+            <span class="countdown-label">SEGUNDOS</span>
+        </div>
+    </div>
+
+    <script>
+        // Função para iniciar o temporizador quando a janela carregar
+        window.onload = function() {
+            // Define a data alvo para 10 de abril de 2026, às 10:00:00 (ajustado para o fuso horário local)
+            const targetDate = new Date('2026-04-10T10:00:00');
+
+            // Seleciona os elementos HTML onde os valores serão exibidos
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            // Função para formatar números com zero à esquerda (ex: 5 -> 05)
+            function formatNumber(num) {
+                return num < 10 ? '0' + num : num;
+            }
+
+            // Função para atualizar a contagem regressiva
+            function updateCountdown() {
+                const now = new Date().getTime(); // Tempo atual em milissegundos
+                const distance = targetDate.getTime() - now; // Distância até a data alvo
+
+                // Verifica se a contagem regressiva terminou
+                if (distance < 0) {
+                    clearInterval(countdownInterval); // Para o temporizador
+                    // Define os valores como zero e exibe uma mensagem
+                    daysEl.innerHTML = '00';
+                    hoursEl.innerHTML = '00';
+                    minutesEl.innerHTML = '00';
+                    secondsEl.innerHTML = '00';
+                    console.log('CONTADOR CONCLUÍDO!');
+                    return;
+                }
+
+                // Cálculos de tempo para dias, horas, minutos e segundos
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Atualiza o conteúdo dos elementos HTML
+                daysEl.innerHTML = formatNumber(days);
+                hoursEl.innerHTML = formatNumber(hours);
+                minutesEl.innerHTML = formatNumber(minutes);
+                secondsEl.innerHTML = formatNumber(seconds);
+            }
+
+            // Chama a função updateCountdown a cada segundo (1000 milissegundos)
+            const countdownInterval = setInterval(updateCountdown, 1000);
+
+            // Chama a função uma vez imediatamente para evitar um atraso inicial
+            updateCountdown();
+        };
+    </script>
+</body>
+</html>
